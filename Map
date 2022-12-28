@@ -1,0 +1,30 @@
+#include <iostream>
+#include <map>
+using namespace std;
+int main()
+{
+    map<string,int>pmap;
+    pmap["goa"]=1;
+    pmap["assam"]=2;
+    pmap["punjab"]=3;
+    
+    string state;
+    int flag;
+    flag=0;
+    cout<<"Enter State Name:";
+    cin>>state;
+    map<string,int>::iterator iter;
+    for(iter=pmap.begin(); iter!=pmap.end();iter++)
+    {
+      if(iter->first==state)
+      {
+      cout<<"Population of "<<state<<" is "<<iter->second<<" Lakh";
+      flag=1;
+      }
+      
+    }
+    if (flag==0)
+    cout<<"state not found";
+    
+    return 0;
+}
